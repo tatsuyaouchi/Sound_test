@@ -6,33 +6,26 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
-import android.media.AudioAttributes;
-import android.media.AudioManager;
 import android.media.SoundPool;
 import android.media.MediaPlayer;
-import android.os.Build;
-import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
 import android.view.animation.AnimationSet;
 import android.view.animation.TranslateAnimation;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.util.Log;
-import android.graphics.Bitmap;
 
-public class subActivity extends AppCompatActivity {
+public class Home extends AppCompatActivity implements View.OnClickListener {
 
     private final static int RESULT_CAMERA = 1000;
     private ImageView imageView;
-    SoundPool soundPool;
     MediaPlayer Player;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sub);
+        setContentView(R.layout.home);
+        findViewById(R.id.button3).setOnClickListener(this);
 
         imageView = findViewById(R.id.imageView); // 撮った画像を表示
 
@@ -42,19 +35,7 @@ public class subActivity extends AppCompatActivity {
         translate.setDuration(200);
         imageView.startAnimation(translate); // 撮った画像を表示
 
-        Button cameraButton = findViewById(R.id.camera_button);
-        cameraButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(intent,RESULT_CAMERA);
-//                BGMstart();
-
-            }
-        });
-
-
-
+        findViewById(R.id.camera_button).setOnClickListener(this);
 
     }
 
@@ -64,11 +45,19 @@ public class subActivity extends AppCompatActivity {
         }
     }
 
-//    protected  void BGMstop(){
-//        if(Player.isPlaying()){
-//            Player.stop();
-//        }
-//    }
+
+    public void onClick(View view){
+        switch (view.getId()){
+            case R.id.camera_button:
+                Intent intent = new Intent (MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(intent, RESULT_CAMERA);
+                break;
+            case R.id.button3:
+                Intent intent2 = new Intent(this, Zukan.class);
+                startActivity(intent2);
+                break;
+        }
+    }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == RESULT_CAMERA) {
@@ -93,19 +82,7 @@ public class subActivity extends AppCompatActivity {
         }
 
 
-
-
-//    public void onA(View v){
-//        // ④ 再生処理(再生ボタン)
-//        soundPool.play(mp3a,1f , 1f, 0, 0, 1f);
-//    }
-//
-//    public void onB(View v){
-//        // ④ 再生処理 (再生ボタン)
-//        soundPool.play(mp3b,1f , 1f, 0, 0, 1f);
-//    }
-//
-//
     }
+
 
 }
