@@ -18,14 +18,4 @@ public class Zukan extends AppCompatActivity {
         setContentView(R.layout.zukan);
 
     }
-
-    public void onClick(View view){
-        switch (view.getId()){
-            case R.id.imageButton5:
-                Intent intent = new Intent(this, Monster.class);
-                startActivity(intent);
-                break;
-        }
-
-    }
 }
