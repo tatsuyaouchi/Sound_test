@@ -2,6 +2,7 @@ package jp.ac.shohoku.hguremetal.sound_test;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -11,8 +12,10 @@ import android.media.MediaPlayer;
 import android.provider.MediaStore;
 import android.view.View;
 import android.view.animation.AnimationSet;
+import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
+
 
 public class Home extends AppCompatActivity implements View.OnClickListener {
 
@@ -21,23 +24,31 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
     MediaPlayer Player;
 
 
+    @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
+
+        findViewById(R.id.suraimu).startAnimation(AnimationUtils.loadAnimation(this, R.anim.anime));
+
         findViewById(R.id.button3).setOnClickListener(this);
 
-        imageView = findViewById(R.id.imageView); // 撮った画像を表示
-
-
-        AnimationSet set =new AnimationSet(true);
-        TranslateAnimation translate = new TranslateAnimation(0,100,0,100);
-        translate.setDuration(200);
-        imageView.startAnimation(translate); // 撮った画像を表示
+//        imageView = findViewById(R.id.imageView); // 撮った画像を表示
+//
+//
+//        AnimationSet set =new AnimationSet(true);
+//        TranslateAnimation translate = new TranslateAnimation(0,100,0,100);
+//        translate.setDuration(200);
+//        imageView.startAnimation(translate); // 撮った画像を表示
 
         findViewById(R.id.camera_button).setOnClickListener(this);
 
+
+
     }
+
+
 
     protected void BGMstart(){
         if(!Player.isPlaying()){
@@ -83,6 +94,8 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
 
 
     }
+
+
 
 
 }
