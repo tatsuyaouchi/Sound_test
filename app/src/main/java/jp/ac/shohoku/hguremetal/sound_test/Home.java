@@ -1,20 +1,17 @@
 package jp.ac.shohoku.hguremetal.sound_test;
 
-import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
-import android.media.SoundPool;
-import android.media.MediaPlayer;
-import android.provider.MediaStore;
 import android.view.View;
 import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
+
 
 
 public class Home extends AppCompatActivity implements View.OnClickListener {
@@ -60,8 +57,8 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View view){
         switch (view.getId()){
             case R.id.camera_button:
-                Intent intent = new Intent (MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(intent, RESULT_CAMERA);
+                Intent intent = new Intent (getApplication(), Ocr.class);
+                startActivity(intent);
                 break;
             case R.id.button3:
                 Intent intent2 = new Intent(this, Zukan.class);
