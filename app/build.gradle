@@ -26,4 +26,13 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    compile 'com.rmtheis:tess-two:5.4.1'
+    implementation("com.rmtheis:tess-two:9.0.0")
+    implementation("androidx.exifinterface:exifinterface:1.0.0")
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    //noinspection GradleCompatible
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'com.rmtheis:tess-two:5.4.1'
+    implementation 'androidx.legacy:legacy-support-v13:1.0.0'
 }
