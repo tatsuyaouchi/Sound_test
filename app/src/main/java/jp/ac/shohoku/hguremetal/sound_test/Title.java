@@ -9,8 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Title extends AppCompatActivity implements View.OnClickListener{
 
-    MediaPlayer Player;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,13 +17,6 @@ public class Title extends AppCompatActivity implements View.OnClickListener{
         findViewById(R.id.button1).setOnClickListener(this);
 
         findViewById(R.id.button2).setOnClickListener(this);
-
-
-        // BGM再生
-        MediaPlayer Player = MediaPlayer.create(this, R.raw.bgm);
-        Player.start();
-        Player.setLooping(true);
-
 
     }
 
