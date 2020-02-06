@@ -24,17 +24,24 @@ public class Zukan extends AppCompatActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.zukan);
 
+
+    }
+
+    @Override
+    public void onClick(View v) {
         ImageView tapview = findViewById(R.id.imageView1);
         ImageView tapview2 = findViewById(R.id.imageView2);
         ImageView tapview3 = findViewById(R.id.imageView3);
         ImageView tapview4 = findViewById(R.id.imageView4);
         ImageView tapview5 = findViewById(R.id.imageView5);
 
+
         tapview.setOnClickListener(this);
         tapview2.setOnClickListener(this);
         tapview3.setOnClickListener(this);
         tapview4.setOnClickListener(this);
         tapview5.setOnClickListener(this);
+
 
     }
 /*
@@ -79,9 +86,10 @@ public class Zukan extends AppCompatActivity implements View.OnClickListener{
                 new AlertDialog.Builder(Zukan.this)
                         .setView(iv5)
                         .show();
-                break;
-        }
+                break;*/
+}
 
-    }
+
+
 
 
