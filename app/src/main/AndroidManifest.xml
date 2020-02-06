@@ -15,6 +15,7 @@
         <activity android:name=".Asobikata"></activity>
         <activity android:name=".Zukan"></activity>
         <activity android:name=".Ocr"></activity>
+        <activity android:name=".Summon"></activity>
         <activity android:name=".Title">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

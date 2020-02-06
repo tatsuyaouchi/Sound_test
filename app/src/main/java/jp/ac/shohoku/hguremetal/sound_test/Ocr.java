@@ -38,7 +38,7 @@ public class Ocr extends Activity implements ActivityCompat.OnRequestPermissions
     private TessBaseAPI tessBaseApi;
     TextView textView;
     Uri outputFileUri;
-    private static final String lang = "jpn";
+    private static final String lang = "eng";
     String result = "empty";
     private RequestPermissionsTool requestTool; //for API >=23 only
 
@@ -189,7 +189,16 @@ public class Ocr extends Activity implements ActivityCompat.OnRequestPermissions
 
             result = extractText(bitmap);
 
+            // 読み取った文字列から空白・改行を削除
+            result = result.replaceAll(" ", "");
+            result = result.replaceAll("\n", "");
+
             textView.setText(result);
+
+            // 読み取った文字列をSummonクラスへ送る
+            Intent intentOcrResult = new Intent(getApplication(), Summon.class);
+            intentOcrResult.putExtra("EXTRA_OCR_RESULT", result);
+            startActivity(intentOcrResult);
 
         } catch (Exception e) {
             Log.e(TAG, e.getMessage());
@@ -210,7 +219,6 @@ public class Ocr extends Activity implements ActivityCompat.OnRequestPermissions
         tessBaseApi.init(DATA_PATH, lang);
 
         //EXTRA SETTINGS
-        //For example if we only want to detect numbers
         tessBaseApi.setVariable(TessBaseAPI.VAR_CHAR_WHITELIST, "1234567890");
 //
 //        //blackList Example
