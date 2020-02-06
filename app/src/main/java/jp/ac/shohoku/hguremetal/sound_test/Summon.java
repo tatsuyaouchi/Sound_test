@@ -1,5 +1,7 @@
 package jp.ac.shohoku.hguremetal.sound_test;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
@@ -8,12 +10,19 @@ import android.os.Bundle;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentManager;
 
 import java.io.InputStream;
 
 public class Summon extends AppCompatActivity {
     private int ocrResult;
+    private DialogFragment dialogFragment;
+    private FragmentManager fragmentManager;
+    // T -> 召喚済み F -> 未召喚
+    public boolean fm0, fm1, fm2, fm3, fm4, fm5, fm6, fm7, fm8, fm9 = false;
     static final int MAX_MONSTER = 10;  // 実装するモンスターの数
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +38,8 @@ public class Summon extends AppCompatActivity {
     }
 
     // 読み取った数字に応じて召喚するモンスターの決定
-    private void summon(){
+    // 対応するモンスターの画像表示
+    public void summon(){
         ImageView iv = findViewById(R.id.image_view);
         AssetManager assets = getResources().getAssets();
 
@@ -47,6 +57,27 @@ public class Summon extends AppCompatActivity {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    public class AlertDialogFragment extends DialogFragment {
+
+        @Override
+        public Dialog onCreateDialog(Bundle savedInstanceState) {
+            AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+
+            alert.setTitle("警告");
+            alert.setMessage("召喚に失敗しました");
+
+            return alert.create();
+        }
+
+        @Override
+        public void onPause() {
+            super.onPause();
+
+            // onPause でダイアログを閉じる場合
+            dismiss();
         }
     }
 }
