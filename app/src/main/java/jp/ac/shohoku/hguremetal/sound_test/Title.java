@@ -14,7 +14,7 @@ public class Title extends AppCompatActivity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.title);
-        findViewById(R.id.button1).setOnClickListener(this);
+        findViewById(R.id.imageButton3).setOnClickListener(this);
 
 
 
