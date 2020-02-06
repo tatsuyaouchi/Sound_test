@@ -16,11 +16,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class Home extends AppCompatActivity implements View.OnClickListener {
 
-    private final static int RESULT_CAMERA = 1000;
-    private ImageView imageView;
-    MediaPlayer Player;
-
-
     @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,32 +26,14 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
 
         findViewById(R.id.button3).setOnClickListener(this);
 
-//        imageView = findViewById(R.id.imageView); // 撮った画像を表示
-//
-//
-//        AnimationSet set =new AnimationSet(true);
-//        TranslateAnimation translate = new TranslateAnimation(0,100,0,100);
-//        translate.setDuration(200);
-//        imageView.startAnimation(translate); // 撮った画像を表示
+        findViewById(R.id.ocr_button).setOnClickListener(this);
 
-        findViewById(R.id.camera_button).setOnClickListener(this);
-
-
-
-    }
-
-
-
-    protected void BGMstart(){
-        if(!Player.isPlaying()){
-            Player.start();
-        }
     }
 
 
     public void onClick(View view){
         switch (view.getId()){
-            case R.id.camera_button:
+            case R.id.ocr_button:
                 Intent intent = new Intent (getApplication(), Ocr.class);
                 startActivity(intent);
                 break;
@@ -66,33 +43,6 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
                 break;
         }
     }
-
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == RESULT_CAMERA) {
-            Bitmap bitmap;
-            // cancelしたケースも含む
-            if (data.getExtras() == null) {
-                Log.d("debug", "cancel ?");
-                return;
-            } else {
-                bitmap = (Bitmap) data.getExtras().get("data");
-                if (bitmap != null) {
-                    // 画面サイズを計測
-                    int bmpWidth = bitmap.getWidth();
-                    int bmpHeight = bitmap.getHeight();
-                    Log.d("debug", String.format("w= %d", bmpWidth));
-                    Log.d("debug", String.format("h= %d", bmpHeight));
-                }
-            }
-
-            imageView.setImageBitmap(bitmap);
-
-        }
-
-
-    }
-
-
 
 
 }
