@@ -17,10 +17,6 @@ import java.io.InputStream;
 
 public class Summon extends AppCompatActivity {
     private int ocrResult;
-    private DialogFragment dialogFragment;
-    private FragmentManager fragmentManager;
-    // T -> 召喚済み F -> 未召喚
-    public boolean fm0, fm1, fm2, fm3, fm4, fm5, fm6, fm7, fm8, fm9 = false;
     static final int MAX_MONSTER = 10;  // 実装するモンスターの数
 
 
@@ -31,10 +27,15 @@ public class Summon extends AppCompatActivity {
 
         // OCRで読み取った文字列の受取
         // 文字列を数値(int)に変換する
+
         Intent intentOcrResult = getIntent();
         ocrResult = Integer.parseInt(intentOcrResult.getStringExtra("EXTRA_OCR_RESULT"));
 
         summon();
+
+        Intent intentOcrResult3 = new Intent(getApplication(), Home.class);
+        intentOcrResult3.putExtra("EXTRA_OCR_RESULT3", ocrResult);
+        startActivity(intentOcrResult3);
     }
 
     // 読み取った数字に応じて召喚するモンスターの決定
@@ -57,27 +58,6 @@ public class Summon extends AppCompatActivity {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }
-    }
-
-    public class AlertDialogFragment extends DialogFragment {
-
-        @Override
-        public Dialog onCreateDialog(Bundle savedInstanceState) {
-            AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
-
-            alert.setTitle("警告");
-            alert.setMessage("召喚に失敗しました");
-
-            return alert.create();
-        }
-
-        @Override
-        public void onPause() {
-            super.onPause();
-
-            // onPause でダイアログを閉じる場合
-            dismiss();
         }
     }
 }
