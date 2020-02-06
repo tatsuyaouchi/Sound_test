@@ -8,9 +8,7 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
-import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,19 +28,8 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
         findViewById(R.id.ocr_button).setOnClickListener(this);
 
 
-//        imageView = findViewById(R.id.imageView); // 撮った画像を表示
-//
-//        AnimationSet set =new AnimationSet(true);
-//        TranslateAnimation translate = new TranslateAnimation(no0,100,no0,100);
-//        translate.setDuration(200);
-//        imageView.startAnimation(translate); // 撮った画像を表示
-
-
+    
         findViewById(R.id.suraimu).startAnimation(AnimationUtils.loadAnimation(this, R.anim.anime));//アニメーション
-
-
-    }
-
 
     public void onClick(View view){
         switch (view.getId()){

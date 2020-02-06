@@ -37,7 +37,7 @@ public class Zukan extends AppCompatActivity implements View.OnClickListener{
         tapview5.setOnClickListener(this);
 
     }
-
+/*
     public void onClick(View view){
         switch(view.getId()){
             case R.id.imageView1:
@@ -83,5 +83,5 @@ public class Zukan extends AppCompatActivity implements View.OnClickListener{
         }
 
     }
-}
+
 
