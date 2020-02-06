@@ -32,6 +32,10 @@ public class Summon extends AppCompatActivity implements View.OnClickListener {
         ocrResult = Integer.parseInt(intentOcrResult.getStringExtra("EXTRA_OCR_RESULT"));
 
         summon();
+
+        Intent intentOcrResult3 = new Intent(getApplication(), Home.class);
+        intentOcrResult3.putExtra("EXTRA_OCR_RESULT3", ocrResult);
+        startActivity(intentOcrResult3);
     }
 
     // 読み取った数字に応じて召喚するモンスターの決定
