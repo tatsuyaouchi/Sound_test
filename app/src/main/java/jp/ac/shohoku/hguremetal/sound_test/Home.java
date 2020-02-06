@@ -3,7 +3,9 @@ package jp.ac.shohoku.hguremetal.sound_test;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,8 +15,13 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.InputStream;
+
 
 public class Home extends AppCompatActivity implements View.OnClickListener {
+    private int ocrResult;
+    static final int MAX_MONSTER = 10;  // 実装するモンスターの数
+
 
     @SuppressLint("ResourceType")
     @Override
@@ -28,8 +35,20 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
         findViewById(R.id.ocr_button).setOnClickListener(this);
 
 
-        findViewById(R.id.imageView).startAnimation(AnimationUtils.loadAnimation(this, R.anim.anime));//アニメーション
+        Intent intentOcrResult3 = getIntent();
+        int OcrResult3 = intentOcrResult3.getIntExtra("EXTRA_OCR_RESULT3", 0);
+
+      //  home();
+
+
+         //findViewById(R.id.imageView).startAnimation(AnimationUtils.loadAnimation(this, R.anim.anime));//アニメーション
+
+
     }
+
+
+
+
 
         public void onClick (View view){
             switch (view.getId()) {
