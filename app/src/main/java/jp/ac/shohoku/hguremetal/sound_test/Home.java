@@ -24,11 +24,22 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
 
-        findViewById(R.id.suraimu).startAnimation(AnimationUtils.loadAnimation(this, R.anim.anime));
 
         findViewById(R.id.button3).setOnClickListener(this);
 
         findViewById(R.id.ocr_button).setOnClickListener(this);
+
+
+//        imageView = findViewById(R.id.imageView); // 撮った画像を表示
+//
+//        AnimationSet set =new AnimationSet(true);
+//        TranslateAnimation translate = new TranslateAnimation(no0,100,no0,100);
+//        translate.setDuration(200);
+//        imageView.startAnimation(translate); // 撮った画像を表示
+
+
+        findViewById(R.id.suraimu).startAnimation(AnimationUtils.loadAnimation(this, R.anim.anime));//アニメーション
+
 
     }
 
