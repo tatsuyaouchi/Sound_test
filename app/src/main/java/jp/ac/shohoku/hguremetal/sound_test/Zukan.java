@@ -1,22 +1,13 @@
 package jp.ac.shohoku.hguremetal.sound_test;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.Point;
-import android.graphics.drawable.BitmapDrawable;
-import android.media.Image;
 import android.os.Bundle;
-import android.provider.MediaStore;
-import android.view.Display;
 import android.view.View;
-import android.view.Window;
 import android.widget.ImageView;
 
-public class Zukan extends AppCompatActivity implements View.OnClickListener{
+import androidx.appcompat.app.AppCompatActivity;
+
+public class Zukan extends AppCompatActivity implements View.OnClickListener {
 
 
     @Override
@@ -37,9 +28,10 @@ public class Zukan extends AppCompatActivity implements View.OnClickListener{
         tapview5.setOnClickListener(this);
 
     }
-/*
-    public void onClick(View view){
-        switch(view.getId()){
+
+    @Override
+    public void onClick(View v) {
+        switch(v.getId()){
             case R.id.imageView1:
                 ImageView iv = new ImageView(Zukan.this);
                 iv.setImageResource(R.drawable.mon0);
@@ -81,7 +73,10 @@ public class Zukan extends AppCompatActivity implements View.OnClickListener{
                         .show();
                 break;
         }
-
     }
+/*
+    public void onClick(View view){
 
+*/
 
+}
