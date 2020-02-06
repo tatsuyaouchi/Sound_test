@@ -22,14 +22,14 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
 
-        findViewById(R.id.suraimu).startAnimation(AnimationUtils.loadAnimation(this, R.anim.anime));
 
         findViewById(R.id.button3).setOnClickListener(this);
 
         findViewById(R.id.ocr_button).setOnClickListener(this);
 
-    }
 
+    
+        findViewById(R.id.suraimu).startAnimation(AnimationUtils.loadAnimation(this, R.anim.anime));//アニメーション
 
     public void onClick(View view){
         switch (view.getId()){
