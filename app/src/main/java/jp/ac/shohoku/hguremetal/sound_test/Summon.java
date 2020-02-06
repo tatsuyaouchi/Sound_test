@@ -26,7 +26,6 @@ public class Summon extends AppCompatActivity {
         ocrResult = Integer.parseInt(intentOcrResult.getStringExtra("EXTRA_OCR_RESULT"));
 
         summon();
-        
     }
 
     // 読み取った数字に応じて召喚するモンスターの決定
