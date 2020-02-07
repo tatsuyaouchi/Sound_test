@@ -7,23 +7,52 @@
 
     <TextView
         android:id="@+id/instruction"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Capture imageを押して読み取ってね"
-        />
+        android:layout_width="match_parent"
+        android:layout_height="143dp"
+        android:text="　召喚ボタンを押して読み取ってね"
+        android:textIsSelectable="true"
+        android:textSize="36sp" />
+
+    <!--    <ImageButton-->
+<!--        android:id="@+id/action_btn"-->
+
+<!--        android:layout_width="447dp"-->
+<!--        android:layout_height="242dp"-->
+
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentTop="true"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_marginStart="78dp"-->
+<!--        android:layout_marginTop="247dp"-->
+<!--        android:layout_marginEnd="75dp"-->
+<!--        android:layout_marginBottom="52dp"-->
+<!--        android:background="@android:color/transparent"-->
+<!--        android:scaleType="centerCrop"-->
+<!--        android:src="@drawable/syoukan2" />-->
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/action_btn"
-        android:text="Capture image"
-        android:layout_below="@+id/instruction">
-    </Button>
+        android:layout_width="357dp"
+        android:layout_height="165dp"
+        android:layout_below="@+id/instruction"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="138dp"
+        android:layout_marginTop="204dp"
+        android:layout_marginEnd="105dp"
+        android:background="#FFEB3B"
+        android:text="召喚ボタン"
+        android:textSize="36sp"></Button>
 
     <TextView
         android:id="@+id/textResult"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="OCR result will be here"
-        android:layout_below="@+id/action_btn"/>
+        android:layout_height="163dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="215dp"
+        android:layout_marginBottom="3dp"
+        android:text="OCR result will be here" />
 </RelativeLayout>
