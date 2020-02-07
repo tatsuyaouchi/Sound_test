@@ -29,36 +29,63 @@
                     android:textSize="45sp" />
 
                 <ImageView
+                    android:id="@+id/imageView0"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/hatena" />
+
+                <ImageView
                     android:id="@+id/imageView1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/mon0" />
+                    app:srcCompat="@drawable/hatena" />
 
                 <ImageView
                     android:id="@+id/imageView2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/mon1" />
+                    app:srcCompat="@drawable/hatena" />
 
 
                 <ImageView
                     android:id="@+id/imageView3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/mon2" />
+                    app:srcCompat="@drawable/hatena" />
 
 
                 <ImageView
                     android:id="@+id/imageView4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/mon3" />
+                    app:srcCompat="@drawable/hatena" />
 
                 <ImageView
                     android:id="@+id/imageView5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/mon4" />
+                    app:srcCompat="@drawable/hatena" />
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/hatena" />
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/hatena" />
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/hatena" />
+<!--                <ImageView-->
+<!--                    android:id="@+id/imageView9"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    app:srcCompat="@drawable/hatena" />-->
 
             </LinearLayout>
         </ScrollView>

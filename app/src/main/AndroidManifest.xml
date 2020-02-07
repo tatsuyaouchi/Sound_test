@@ -13,13 +13,16 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Home"></activity>
         <activity android:name=".Asobikata"></activity>
-        <activity android:name=".Zukan"></activity>
+        <activity android:name=".Zukan">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".Ocr"></activity>
         <activity android:name=".Summon"></activity>
         <activity android:name=".Title">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

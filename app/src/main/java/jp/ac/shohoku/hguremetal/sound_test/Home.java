@@ -27,9 +27,9 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
         setContentView(R.layout.home);
 
 
-        findViewById(R.id.button3).setOnClickListener(this);
+        findViewById(R.id.imageButton).setOnClickListener(this);
 
-        findViewById(R.id.ocr_button).setOnClickListener(this);
+        findViewById(R.id.imageButton2).setOnClickListener(this);
 
 
        Intent intentOcrResult = getIntent();
@@ -56,11 +56,11 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
 
         public void onClick (View view){
             switch (view.getId()) {
-                case R.id.ocr_button:
+                case R.id.imageButton:
                     Intent intent = new Intent(getApplication(), Ocr.class);
                     startActivity(intent);
                     break;
-                case R.id.button3:
+                case R.id.imageButton2:
                     Intent intent2 = new Intent(this, Zukan.class);
                     startActivity(intent2);
                     break;

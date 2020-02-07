@@ -16,8 +16,6 @@ public class Title extends AppCompatActivity implements View.OnClickListener{
         setContentView(R.layout.title);
         findViewById(R.id.imageButton3).setOnClickListener(this);
 
-
-
     }
 
 

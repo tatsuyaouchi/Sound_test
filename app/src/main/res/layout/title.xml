@@ -77,4 +77,6 @@
         android:scaleType="centerInside"
         app:srcCompat="@drawable/hazimeru" />
 
+
+
 </RelativeLayout>

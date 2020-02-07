@@ -1,19 +1,23 @@
 package jp.ac.shohoku.hguremetal.sound_test;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentManager;
 
 import java.io.InputStream;
 
-public class Summon extends AppCompatActivity implements View.OnClickListener {
+public class Summon extends AppCompatActivity {
     private int ocrResult;
+    int ocrResult2;
     static final int MAX_MONSTER = 10;  // 実装するモンスターの数
 
 
@@ -32,12 +36,19 @@ public class Summon extends AppCompatActivity implements View.OnClickListener {
         ocrResult = Integer.parseInt(intentOcrResult.getStringExtra("EXTRA_OCR_RESULT"));
 
         summon();
+
+
+        // 読み取った文字列をZukanクラスへ送る
+        Intent intentOcrResult2 = new Intent(getApplication(), Zukan.class);
+        intentOcrResult2.putExtra("EXTRA_OCR_RESULT2", ocrResult2);
+//        startActivity(intentOcrResult2);
+
     }
 
     // 読み取った数字に応じて召喚するモンスターの決定
     // 対応するモンスターの画像表示
     public void summon(){
-        ImageView iv = findViewById(R.id.image_View);
+        ImageView iv = findViewById(R.id.image_view);
         AssetManager assets = getResources().getAssets();
 
         if(0 <= ocrResult && ocrResult < MAX_MONSTER) { // 対応するモンスターの画像表示

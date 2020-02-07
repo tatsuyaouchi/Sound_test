@@ -187,13 +187,17 @@ public class Ocr extends Activity implements ActivityCompat.OnRequestPermissions
             options.inSampleSize = 4; // 1 - means max size. 4 - means maxsize/4 size. Don't use value <4, because you need more memory in the heap to store your data.
             Bitmap bitmap = BitmapFactory.decodeFile(imgUri.getPath(), options);
 
+
             result = extractText(bitmap);
+
 
             // 読み取った文字列から空白・改行を削除
             result = result.replaceAll(" ", "");
             result = result.replaceAll("\n", "");
 
+
             textView.setText(result);
+
 
             // 読み取った文字列をSummonクラスへ送る
             Intent intentOcrResult = new Intent(getApplication(), Summon.class);
