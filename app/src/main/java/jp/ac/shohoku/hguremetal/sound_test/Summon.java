@@ -24,7 +24,6 @@ public class Summon extends AppCompatActivity implements View.OnClickListener {
 
         findViewById(R.id.homehe).setOnClickListener(this);
 
-
         // OCRで読み取った文字列の受取
         // 文字列を数値(int)に変換する
 
@@ -32,10 +31,6 @@ public class Summon extends AppCompatActivity implements View.OnClickListener {
         ocrResult = Integer.parseInt(intentOcrResult.getStringExtra("EXTRA_OCR_RESULT"));
 
         summon();
-
-        Intent intentOcrResult3 = new Intent(getApplication(), Home.class);
-        intentOcrResult3.putExtra("EXTRA_OCR_RESULT3", ocrResult);
-        startActivity(intentOcrResult3);
     }
 
     // 読み取った数字に応じて召喚するモンスターの決定
@@ -61,12 +56,9 @@ public class Summon extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
-
     public void onClick(View view){
-        Intent intentOcrResult3 = new Intent(getApplication(), Home.class);
-        intentOcrResult3.putExtra("EXTRA_OCR_RESULT3", ocrResult);
-        startActivity(intentOcrResult3);
-
+        Intent intentOcrResult = new Intent(getApplication(), Home.class);
+        intentOcrResult.putExtra("EXTRA_OCR_RESULT2", ocrResult);
+        startActivity(intentOcrResult);
     }
 }
-//

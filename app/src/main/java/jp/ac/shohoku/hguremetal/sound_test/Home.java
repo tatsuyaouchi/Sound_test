@@ -26,14 +26,11 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
 
-
         findViewById(R.id.button3).setOnClickListener(this);
-
         findViewById(R.id.ocr_button).setOnClickListener(this);
 
-
-       Intent intentOcrResult = getIntent();
-       ocrResult = intentOcrResult.getIntExtra("EXTRA_OCR_RESULT3", MAX_MONSTER);
+        Intent intentOcrResult = getIntent();
+        ocrResult = intentOcrResult.getIntExtra("EXTRA_OCR_RESULT2", -1);
 
         homeMonster();
     }
@@ -51,9 +48,6 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
         }
     }
 
-
-
-
         public void onClick (View view){
             switch (view.getId()) {
                 case R.id.ocr_button:
@@ -61,7 +55,8 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
                     startActivity(intent);
                     break;
                 case R.id.button3:
-                    Intent intent2 = new Intent(this, Zukan.class);
+                    Intent intent2 = new Intent(getApplication(), Zukan.class);
+                    intent2.putExtra("EXTRA_OCR_RESULT2", ocrResult);
                     startActivity(intent2);
                     break;
                 }
