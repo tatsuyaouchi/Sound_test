@@ -7,30 +7,31 @@
     tools:context=".Home">
 
 
-    <Button
-        android:id="@+id/ocr_button"
-        android:layout_width="130dp"
-        android:layout_height="92dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="44dp"
-        android:text="読み取り"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.227"
-        app:layout_constraintStart_toStartOf="parent" />
+<!--    <Button-->
+<!--        android:id="@+id/ocr_button"-->
+<!--        android:layout_width="130dp"-->
+<!--        android:layout_height="92dp"-->
+<!--        android:layout_alignParentStart="true"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginBottom="44dp"-->
+<!--        android:text="読み取り"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.227"-->
+<!--        app:layout_constraintStart_toStartOf="parent" />-->
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="155dp"
-        android:layout_height="88dp"
-        android:layout_marginBottom="48dp"
-        android:text="図鑑"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.804"
-        app:layout_constraintStart_toStartOf="parent" />
+<!--    <ImageButton-->
+<!--        android:id="@+id/button3"-->
+<!--        android:layout_width="155dp"-->
+<!--        android:layout_height="88dp"-->
+<!--        android:layout_marginBottom="48dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.804"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:srcCompat="@drawable/zukan"-->
+<!--         />-->
 
     <ImageView
         android:id="@+id/imageView3"
@@ -39,13 +40,13 @@
         android:background="@drawable/haikei"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
-        android:id="@+id/image_view"
+        android:id="@+id/image_View"
         android:layout_width="340dp"
         android:layout_height="325dp"
         android:layout_marginTop="208dp"
@@ -55,6 +56,34 @@
         app:layout_constraintStart_toStartOf="@+id/imageView3"
         app:layout_constraintTop_toTopOf="@+id/imageView3"
         app:layout_constraintVertical_bias="0.405" />
+
+    <ImageButton
+        android:id="@+id/button3"
+        android:layout_width="160dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="52dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.816"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/zukan" />
+
+    <ImageButton
+        android:id="@+id/ocr_button"
+        android:layout_width="160dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="52dp"
+        android:background="@android:color/transparent"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintHorizontal_bias="0.186"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/syoukan" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
