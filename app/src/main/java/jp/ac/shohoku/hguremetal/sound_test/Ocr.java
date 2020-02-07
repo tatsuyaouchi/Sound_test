@@ -200,6 +200,8 @@ public class Ocr extends Activity implements ActivityCompat.OnRequestPermissions
             intentOcrResult.putExtra("EXTRA_OCR_RESULT", result);
             startActivity(intentOcrResult);
 
+
+
         } catch (Exception e) {
             Log.e(TAG, e.getMessage());
         }

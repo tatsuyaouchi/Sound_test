@@ -1,21 +1,18 @@
 package jp.ac.shohoku.hguremetal.sound_test;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.DialogFragment;
-import androidx.fragment.app.FragmentManager;
 
 import java.io.InputStream;
 
-public class Summon extends AppCompatActivity {
+public class Summon extends AppCompatActivity implements View.OnClickListener {
     private int ocrResult;
     static final int MAX_MONSTER = 10;  // 実装するモンスターの数
 
@@ -25,6 +22,9 @@ public class Summon extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.summon);  // 記述必須：どのレイアウトを使うのか指定
 
+        findViewById(R.id.homehe).setOnClickListener(this);
+
+
         // OCRで読み取った文字列の受取
         // 文字列を数値(int)に変換する
 
@@ -32,16 +32,12 @@ public class Summon extends AppCompatActivity {
         ocrResult = Integer.parseInt(intentOcrResult.getStringExtra("EXTRA_OCR_RESULT"));
 
         summon();
-
-        Intent intentOcrResult3 = new Intent(getApplication(), Home.class);
-        intentOcrResult3.putExtra("EXTRA_OCR_RESULT3", ocrResult);
-        startActivity(intentOcrResult3);
     }
 
     // 読み取った数字に応じて召喚するモンスターの決定
     // 対応するモンスターの画像表示
     public void summon(){
-        ImageView iv = findViewById(R.id.image_view);
+        ImageView iv = findViewById(R.id.image_View);
         AssetManager assets = getResources().getAssets();
 
         if(0 <= ocrResult && ocrResult < MAX_MONSTER) { // 対応するモンスターの画像表示
@@ -59,6 +55,14 @@ public class Summon extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+    }
+
+
+    public void onClick(View view){
+        Intent intentOcrResult3 = new Intent(getApplication(), Home.class);
+        intentOcrResult3.putExtra("EXTRA_OCR_RESULT3", ocrResult);
+        startActivity(intentOcrResult3);
+
     }
 }
 //
