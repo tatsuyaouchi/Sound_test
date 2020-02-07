@@ -6,11 +6,8 @@ import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,17 +32,24 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
         findViewById(R.id.ocr_button).setOnClickListener(this);
 
 
-        Intent intentOcrResult3 = getIntent();
-        int OcrResult3 = intentOcrResult3.getIntExtra("EXTRA_OCR_RESULT3", 0);
+       Intent intentOcrResult = getIntent();
+       ocrResult = intentOcrResult.getIntExtra("EXTRA_OCR_RESULT3", MAX_MONSTER);
 
-      //  home();
-
-
-         //findViewById(R.id.imageView).startAnimation(AnimationUtils.loadAnimation(this, R.anim.anime));//アニメーション
-
-
+        homeMonster();
     }
+    public void homeMonster() {
+        ImageView iv = findViewById(R.id.image_View);
+        AssetManager assets = getResources().getAssets();
 
+        if (0 <= ocrResult && ocrResult < MAX_MONSTER) { // 対応するモンスターの画像表示
+            try (InputStream iStream = assets.open("mon" + ocrResult + ".png")) {
+                Bitmap bitmap = BitmapFactory.decodeStream(iStream);
+                iv.setImageBitmap(bitmap);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
 
 
@@ -63,7 +67,3 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
                 }
             }
         }
-
-
-
-
