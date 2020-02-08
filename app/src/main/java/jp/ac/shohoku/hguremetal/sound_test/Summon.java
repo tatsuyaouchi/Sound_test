@@ -23,8 +23,10 @@ public class Summon extends AppCompatActivity implements View.OnClickListener {
 
         findViewById(R.id.homehe).setOnClickListener(this);
 
+
         // OCRで読み取った文字列の受取
         // 文字列を数値(int)に変換する
+
         Intent intentOcrResult = getIntent();
         ocrResult = Integer.parseInt(intentOcrResult.getStringExtra("EXTRA_OCR_RESULT"));
 
@@ -58,5 +60,7 @@ public class Summon extends AppCompatActivity implements View.OnClickListener {
         Intent intentOcrResult = new Intent(getApplication(), Home.class);
         intentOcrResult.putExtra("EXTRA_OCR_RESULT2", ocrResult);
         startActivity(intentOcrResult);
+
     }
 }
+//

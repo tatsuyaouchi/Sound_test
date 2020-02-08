@@ -25,6 +25,7 @@ public class Zukan extends AppCompatActivity implements View.OnClickListener{
         setContentView(R.layout.zukan);
     }
 
+
     @Override
     public void onClick(View v) {
         ImageView tapview = findViewById(R.id.imageView1);
