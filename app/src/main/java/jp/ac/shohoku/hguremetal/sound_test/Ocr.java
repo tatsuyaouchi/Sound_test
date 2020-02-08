@@ -193,6 +193,7 @@ public class Ocr extends Activity implements ActivityCompat.OnRequestPermissions
             result = result.replaceAll(" ", "");
             result = result.replaceAll("\n", "");
 
+            // デバッグ用の表示
             textView.setText(result);
 
             // 読み取った文字列をSummonクラスへ送る

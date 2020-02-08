@@ -23,9 +23,8 @@ public class Zukan extends AppCompatActivity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.zukan);
-
-
     }
+
 
     @Override
     public void onClick(View v) {
