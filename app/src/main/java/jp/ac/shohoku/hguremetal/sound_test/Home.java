@@ -8,6 +8,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,7 +19,9 @@ import java.io.InputStream;
 
 public class Home extends AppCompatActivity implements View.OnClickListener {
     private int ocrResult;
+
     static final int MAX_MONSTER = 10;  // 実装するモンスターの数
+
 
 
     @SuppressLint("ResourceType")
@@ -33,10 +37,13 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
         ocrResult = intentOcrResult.getIntExtra("EXTRA_OCR_RESULT2", -1);
 
 
+
        Intent intentOcrResult = getIntent();
        ocrResult = intentOcrResult.getIntExtra("EXTRA_OCR_RESULT3", MAX_MONSTER);
         homeMonster();
     }
+
+
     public void homeMonster() {
         ImageView iv = findViewById(R.id.image_View);
         AssetManager assets = getResources().getAssets();
@@ -49,9 +56,11 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
                 e.printStackTrace();
             }
         }
+       
+
     }
 
-
+  
         public void onClick (View view){
             switch (view.getId()) {
                 case R.id.ocr_button:
