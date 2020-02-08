@@ -20,7 +20,6 @@ public class Summon extends AppCompatActivity {
     int ocrResult2;
     static final int MAX_MONSTER = 10;  // 実装するモンスターの数
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,11 +67,10 @@ public class Summon extends AppCompatActivity {
         }
     }
 
-
     public void onClick(View view){
-        Intent intentOcrResult3 = new Intent(getApplication(), Home.class);
-        intentOcrResult3.putExtra("EXTRA_OCR_RESULT3", ocrResult);
-        startActivity(intentOcrResult3);
+        Intent intentOcrResult = new Intent(getApplication(), Home.class);
+        intentOcrResult.putExtra("EXTRA_OCR_RESULT2", ocrResult);
+        startActivity(intentOcrResult);
 
     }
 }
