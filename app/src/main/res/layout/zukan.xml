@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/haikei"
     tools:context=".Zukan">
 
     <RelativeLayout
@@ -22,63 +23,71 @@
 
 
                 <ImageView
-                    android:id="@+id/imageView0"
+                    android:id="@+id/ImageView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/hatena" />
+                    android:layout_gravity="center_horizontal"
+                    app:srcCompat="@drawable/zukan"
+                    android:textSize="45sp" />
+
+                <ImageView
+                    android:id="@+id/imageView0"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    app:srcCompat="@drawable/mon0" />
 
                 <ImageView
                     android:id="@+id/imageView1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/hatena" />
+                    android:layout_height="300dp"
+                    app:srcCompat="@drawable/mon1" />
 
                 <ImageView
                     android:id="@+id/imageView2"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/hatena" />
+                    android:layout_height="300dp"
+                    app:srcCompat="@drawable/mon2" />
 
 
                 <ImageView
                     android:id="@+id/imageView3"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/hatena" />
+                    android:layout_height="300dp"
+                    app:srcCompat="@drawable/mon3" />
 
 
                 <ImageView
                     android:id="@+id/imageView4"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/hatena" />
+                    android:layout_height="300dp"
+                    app:srcCompat="@drawable/mon4" />
 
                 <ImageView
                     android:id="@+id/imageView5"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/hatena" />
+                    android:layout_height="300dp"
+                    app:srcCompat="@drawable/mon5" />
 
                 <ImageView
                     android:id="@+id/imageView6"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/hatena" />
+                    android:layout_height="300dp"
+                    app:srcCompat="@drawable/mon6" />
                 <ImageView
                     android:id="@+id/imageView7"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/hatena" />
+                    android:layout_height="300dp"
+                    app:srcCompat="@drawable/mon7" />
                 <ImageView
                     android:id="@+id/imageView8"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/hatena" />
-<!--                <ImageView-->
-<!--                    android:id="@+id/imageView9"-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    app:srcCompat="@drawable/hatena" />-->
+                    android:layout_height="300dp"
+                    app:srcCompat="@drawable/mon8" />
+                <ImageView
+                    android:id="@+id/imageView9"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    app:srcCompat="@drawable/mon9" />
 
             </LinearLayout>
         </ScrollView>
