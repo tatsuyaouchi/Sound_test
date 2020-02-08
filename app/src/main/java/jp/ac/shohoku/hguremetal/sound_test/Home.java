@@ -56,7 +56,6 @@ public class Home extends AppCompatActivity implements View.OnClickListener {
                     break;
                 case R.id.button3:
                     Intent intent2 = new Intent(getApplication(), Zukan.class);
-                    intent2.putExtra("EXTRA_OCR_RESULT2", ocrResult);
                     startActivity(intent2);
                     break;
                 }

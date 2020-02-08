@@ -16,7 +16,6 @@ public class Summon extends AppCompatActivity implements View.OnClickListener {
     private int ocrResult;
     static final int MAX_MONSTER = 10;  // 実装するモンスターの数
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,7 +25,6 @@ public class Summon extends AppCompatActivity implements View.OnClickListener {
 
         // OCRで読み取った文字列の受取
         // 文字列を数値(int)に変換する
-
         Intent intentOcrResult = getIntent();
         ocrResult = Integer.parseInt(intentOcrResult.getStringExtra("EXTRA_OCR_RESULT"));
 
